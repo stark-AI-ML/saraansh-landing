@@ -19,14 +19,16 @@
   --gradient: linear-gradient(135deg, #8a2be2, #5b2cff);
   --gradient-reverse: linear-gradient(135deg, #5b2cff, #8a2be2);
   --dark-bg: #11071f;
-  --light-bg: #11071f;
+  --light-bg:  #ffffff;
   --shadow: 0 10px 30px rgba(138, 43, 226, 0.4);
   --shadow-light: 0 5px 20px rgba(138, 43, 226, 0.2);
   --text-dark: #1a1a1a;
   --text-light: #f5f5f7;
   --text-gray: #666;
   --section-padding: clamp(5rem, 10vw, 10rem) 0;
-  --navBar-color : #11071f; 
+
+  --navBar-color : linear-gradient(135deg, #8a2be2, #5b2cff); 
+  --cardBackground-dark : rgba(255, 255, 255, 0.05); 
 }
 
 
@@ -42,8 +44,8 @@ html {
 
 body {
   font-family: "Inter", sans-serif;
-  color: var(--text-dark);
-  background-color: var(--light-bg);
+  color: var(--text-light);
+  background-color: var(--dark-bg);
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -167,18 +169,26 @@ header {
   -webkit-backdrop-filter: blur(12px);
   z-index: 1000;
   padding: 1.2rem 0;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+  /* box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05); */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3); 
   transition: all 0.4s ease;
 }
 
 header.scrolled {
   padding: 0.8rem 0;
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.7),
     rgba(255, 255, 255, 0.8)
-  );
-  box-shadow: 0 5px 20px rgba(138, 43, 226, 0.1);
+  ); */
+  background: linear-gradient(135deg, rgba(138, 43, 226, 0.3), rgba(91, 44, 255, 0.3));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* for Safari */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  color: white;
+
+  /* box-shadow: 0 5px 20px rgba(138, 43, 226, 0.1); */
 }
 
 .header-container {
@@ -192,7 +202,7 @@ header.scrolled {
   align-items: center;
   font-weight: 800;
   font-size: 1.6rem;
-  color: var(--text-dark);
+  color: var(--text-light);
   text-decoration: none;
   gap: 0.6rem;
 }
@@ -251,7 +261,7 @@ nav ul li {
 
 nav ul li a {
   text-decoration: none;
-  color: var(--text-dark);
+  color: var(--text-light);
   font-weight: 600;
   transition: color 0.3s ease;
   position: relative;
@@ -421,7 +431,8 @@ nav ul li a:hover::after {
 }
 
 .feature-card {
-  background: rgba(255, 255, 255, 0.7);
+  /* background: rgba(255, 255, 255, 0.7); */
+  background-color: var(--cardBackground-dark);
   backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 2.5rem 2rem;
@@ -464,7 +475,7 @@ nav ul li a:hover::after {
 
 /* Features Section */
 .features {
-  background-color: #f8f9ff;
+  background-color: var(--dark-bg);
   position: relative;
   overflow: hidden;
 }
@@ -481,7 +492,7 @@ nav ul li a:hover::after {
   flex-wrap: wrap;
   gap: 1rem;
   position: relative;
-  background: #fff;
+  background: var(--cardBackground-dark);
   padding: 0.5rem;
   border-radius: 50px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
@@ -516,7 +527,7 @@ nav ul li a:hover::after {
 }
 
 .tab-content {
-  background: white;
+  background: var(--cardBackground-dark);
   border-radius: 20px;
   padding: 3rem;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
@@ -704,7 +715,7 @@ nav ul li a:hover::after {
 }
 
 .how-it-works {
-  background-color: #f8f9ff;
+  background-color: var(--dark-bg);
   padding: var(--section-padding);
   background-image: radial-gradient(
       at 0% 0%,
@@ -749,7 +760,7 @@ nav ul li a:hover::after {
 .step {
   flex: 0 0 500px;
   height: 400px;
-  background: white;
+   background: var(--cardBackground-dark);
   border-radius: 20px;
   padding: 3rem;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);

@@ -1,4 +1,4 @@
-/* Vite-specific fixes */
+Vite-specific fixes
 .how-it-works,
 .steps-container,
 .steps,
@@ -7,8 +7,11 @@
   visibility: visible !important;
 }
 
+
+
 .step {
-  background-color: white !important;
+  background-color:  var(--cardBackground-dark) !important;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3)
 }
 
 .how-it-works {
