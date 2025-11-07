@@ -1,0 +1,25 @@
+/* Vite-specific fixes */
+.how-it-works,
+.steps-container,
+.steps,
+.step {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.step {
+  background-color: white !important;
+}
+
+.how-it-works {
+  position: relative;
+  z-index: 1;
+}
+
+.steps {
+  z-index: 2;
+}
+
+.step {
+  z-index: 3;
+}

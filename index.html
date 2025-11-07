@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saraansh</title>
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="stylesheet" href="src/vite-fixes.css" />
+
+    <link rel="stylesheet" href="saraanshLogo.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <link rel="stylesheet" href="src/saraanshLogo.css" />
+  </head>
+  <body>
+    <header id="header">
+      <div class="container header-container">
+        <a href="#" class="logo">
+          <div class="logo-container">
+            <div class="saaransh-logo" role="img" aria-label="Saaransh logo">
+              <svg
+                class="logo-svg"
+                viewBox="0 0 100 100"
+                focusable="false"
+                aria-hidden="true"
+              >
+                <defs>
+                  <!-- Dark color palette with glowing effects -->
+                  <radialGradient id="bgGlow" cx="50%" cy="50%" r="70%">
+                    <stop offset="0%" stop-color="#5b2cff" stop-opacity="0.5" />
+                    <stop
+                      offset="55%"
+                      stop-color="#302b63"
+                      stop-opacity="0.3"
+                    />
+                    <stop
+                      offset="100%"
+                      stop-color="#0f0c29"
+                      stop-opacity="0.8"
+                    />
+                  </radialGradient>
+
+                  <linearGradient id="glyphGrad" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#ffd6ff" />
+                    <stop offset="100%" stop-color="#c8b6ff" />
+                  </linearGradient>
+
+                  <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#c8b6ff" />
+                    <stop offset="60%" stop-color="#7c4dff" />
+                    <stop offset="100%" stop-color="#5b2cff" />
+                  </linearGradient>
+
+                  <!-- Glow filter for revolving ring -->
+                  <filter
+                    id="glowFilter"
+                    x="-50%"
+                    y="-50%"
+                    width="200%"
+                    height="200%"
+                  >
+                    <feGaussianBlur
+                      in="SourceGraphic"
+                      stdDeviation="2.5"
+                      result="blur"
+                    />
+                    <feColorMatrix
+                      in="blur"
+                      mode="matrix"
+                      values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 15 -5"
+                      result="glow"
+                    />
+                    <feBlend in="SourceGraphic" in2="glow" mode="screen" />
+                  </filter>
+                </defs>
+
+                <!-- Background circle with dark gradient -->
+                <g class="disc">
+                  <circle cx="50" cy="50" r="46" fill="url(#bgGlow)" />
+                  <circle cx="50" cy="50" r="45" fill="rgba(15, 12, 41, 0.8)" />
+                </g>
+
+                <!-- Revolving ring with glow effect -->
+                <g class="revolve">
+                  <circle
+                    class="ring"
+                    cx="50"
+                    cy="50"
+                    r="39"
+                    fill="none"
+                    stroke="url(#ringGrad)"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-dasharray="52 290"
+                  />
+                </g>
+                <!-- Orbiting dots -->
+                <g class="orbit">
+                  <g class="orbit-track orbit--a">
+                    <circle cx="50" cy="5" r="30" fill="none" />
+                    <circle class="dot" r="0.5" transform="translate(70 14)" />
+                  </g>
+
+                  <g class="orbit-track orbit--a">
+                    <circle cx="50" cy="50" r="30" fill="none" />
+                    <circle class="dot" r="1" transform="translate(80 40)" />
+                  </g>
+
+                  <g class="orbit-track orbit--a">
+                    <circle cx="50" cy="50" r="30" fill="none" />
+                    <circle class="dot" r="0.6" transform="translate(40 30)" />
+                  </g>
+
+                  <g class="orbit-track orbit--b">
+                    <circle cx="50" cy="50" r="23" fill="none" />
+                    <circle class="dot" r="1.4" transform="translate(73 50)" />
+                  </g>
+                  <g class="orbit-track orbit--c">
+                    <circle cx="50" cy="50" r="36" fill="none" />
+                    <circle class="dot" r="1.2" transform="translate(50 14)" />
+                  </g>
+                </g>
+                <!-- Hindi glyph -->
+                <g class="glyph">
+                  <text
+                    x="50"
+                    y="61"
+                    text-anchor="middle"
+                    dominant-baseline="middle"
+                    font-size="56"
+                    font-weight="700"
+                    fill="url(#glyphGrad)"
+                    stroke="rgba(124,77,255,0.35)"
+                    stroke-width="0.5"
+                    style="
+                      paint-order: stroke fill;
+                      font-family: var(--font-devanagari);
+                    "
+                  >
+                    श
+                  </text>
+                </g>
+              </svg>
+            </div>
+          </div>
+          Saraansh
+        </a>
+        <nav>
+          <ul id="nav-menu">
+            <li style="--i: 0"><a href="#features">Features</a></li>
+            <li style="--i: 1"><a href="#demo">Demo</a></li>
+            <li style="--i: 2"><a href="#how-it-works">How It Works</a></li>
+            <li style="--i: 3"><a href="#cta">Get Started</a></li>
+          </ul>
+        </nav>
+        <div class="header-cta">
+          <!-- <a href="#" class="btn btn-secondary">Sign In</a> -->
+          <a href="src/onBoard.html" class="btn btn-primary"
+            >Get Started Free</a
+          >
+        </div>
+        <button
+          class="mobile-menu-btn"
+          id="mobile-menu-toggle"
+          aria-label="Menu"
+        >
+          <div class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-bg">
+          <div class="gradient-blob blob-1"></div>
+          <div class="gradient-blob blob-2"></div>
+          <div class="gradient-blob blob-3"></div>
+        </div>
+        <div class="container">
+          <div class="hero-content">
+            <h1>AI-Based Insights Instantly</h1>
+            <p>
+              Summarize YouTube videos in seconds. Get smarter LeetCode
+              solutions without spoilers.
+            </p>
+            <div class="hero-cta">
+              <a href="src/onBoard.html" class="btn btn-primary"
+                ><i class="fas fa-rocket"></i> Try Saraansh Free</a
+              >
+              <a href="#demo" class="btn btn-secondary"
+                ><i class="fas fa-play-circle"></i> Watch Demo</a
+              >
+            </div>
+            <div class="feature-cards">
+              <div class="feature-card">
+                <div class="feature-icon"><i class="fab fa-youtube"></i></div>
+                <h3>YouTube Summarizer</h3>
+                <p>
+                  Get summaries of any YouTube video with timestamp integration.
+                </p>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-code"></i></div>
+                <h3>LeetCode Assistant</h3>
+                <p>
+                  Optimize your solutions with smart hints and complexity
+                  analysis.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="features" id="features">
+        <div class="container">
+          <div class="section-header">
+            <h2>Powerful Features for Learning & Coding</h2>
+            <p>Saraansh help you learn faster and code smarter</p>
+          </div>
+          <div class="tabs-container">
+            <div class="tabs">
+              <div class="tab-marker"></div>
+              <button class="tab active" data-tab="youtube">
+                <i class="fab fa-youtube"></i> YouTube Summarizer
+              </button>
+              <button class="tab" data-tab="leetcode">
+                <i class="fas fa-code"></i> LeetCode Assistant
+              </button>
+            </div>
+            <div class="tab-content">
+              <div class="tab-pane active" id="youtube-tab">
+                <div class="feature-grid">
+                  <div class="feature-item">
+                    <i class="fas fa-brain"></i>
+                    <div class="feature-item-content">
+                      <h4>Smart AI Analysis</h4>
+                      <p>
+                        Our AI identifies key concepts, main points, and
+                        important details.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="feature-item">
+                    <i class="fas fa-file-alt"></i>
+                    <div class="feature-item-content">
+                      <h4>Multiple Summary Types</h4>
+                      <p>
+                        Choose from normal, detailed, or concise summaries based
+                        on your needs.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="feature-item">
+                    <i class="fa-solid fa-viruses"></i>
+                    <div class="feature-item-content">
+                      <h4>Multiple AI-Models</h4>
+                      <p>
+                        Select any Openrouter models like Gemini, Chat Gpt,
+                        DeepSeek etc.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="feature-item">
+                    <i class="fa-solid fa-key"></i>
+                    <div class="feature-item-content">
+                      <h4>Insert Your API</h4>
+                      <p>You can insert your Optional Openrouter API Key.</p>
+                    </div>
+                  </div>
+                  <div class="feature-item">
+                    <i class="fas fa-file-pdf"></i>
+                    <div class="feature-item-content">
+                      <h4>PDF Export</h4>
+                      <p>
+                        Save your summaries as PDF files for offline reference
+                        and sharing.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tab-pane" id="leetcode-tab">
+                <div class="feature-grid">
+                  <div class="feature-item">
+                    <i class="fas fa-lightbulb"></i>
+                    <div class="feature-item-content">
+                      <h4>Solution Optimization</h4>
+                      <p>
+                        Get feedback on how to improve your code efficiency and
+                        readability.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="feature-item">
+                    <i class="fas fa-list-ol"></i>
+                    <div class="feature-item-content">
+                      <h4>Additional Examples</h4>
+                      <p>
+                        Receive alternative approaches and examples for better
+                        understanding.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="feature-item">
+                    <i class="fas fa-chart-line"></i>
+                    <div class="feature-item-content">
+                      <h4>Time Complexity Analysis</h4>
+                      <p>
+                        Understand the efficiency of your solution with detailed
+                        complexity breakdown.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="feature-item">
+                    <i class="fas fa-eye-slash"></i>
+                    <div class="feature-item-content">
+                      <h4>Smart Hints</h4>
+                      <p>
+                        Get helpful hints without spoilers to maintain the
+                        learning experience.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo" id="demo">
+        <div class="container">
+          <div class="section-header">
+            <h2>See Saraansh in Action</h2>
+            <p>
+              Watch how our AI transforms your learning and coding experience
+            </p>
+          </div>
+          <div class="demo-container">
+            <div class="demo-video-wrapper">
+              <div class="demo-video-thumbnail" id="video-thumbnail">
+                <img
+                  src="https://img.youtube.com/vi/JiWv2BcrY5E/maxresdefault.jpg"
+                  alt="Video thumbnail"
+                />
+                <div class="play-button"></div>
+              </div>
+              <div
+                class="demo-video-iframe-container"
+                id="video-iframe-container"
+                style="display: none"
+              ></div>
+            </div>
+            <div class="demo-content">
+              <h3>YouTube Summarizer Workflow</h3>
+              <p>
+                Our AI analyzes YouTube videos to extract key information and
+                create comprehensive summaries.
+              </p>
+              <ul class="demo-list">
+                <li>
+                  <i class="fas fa-check-circle"></i
+                  ><span>Get any YouTube Video summmary on one click</span>
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i
+                  ><span>Choose from multiple summary formats</span>
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i
+                  ><span>Export summaries as PDF for offline access</span>
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i
+                  ><span>Navigate with integrated timestamps</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="how-it-works" id="how-it-works">
+        <div class="container">
+          <div class="section-header">
+            <h2>How Saraansh Works</h2>
+            <p>Three simple steps to unlock AI-based insights</p>
+          </div>
+        </div>
+        <div class="steps-container">
+          <div class="step-nav prev">
+            <i class="fas fa-chevron-left"></i>
+          </div>
+          <div class="step-nav next">
+            <i class="fas fa-chevron-right"></i>
+          </div>
+
+          <div class="steps-scroll-wrapper">
+            <div class="steps-track" id="steps-track">
+              <div class="step active">
+                <div class="step-number">1</div>
+                <h3>SignUp saraaansh and download the Zip File</h3>
+                <p>
+                  Click on get started give basic answer to basic dashboard
+                  Question and SignUp with GitHub
+                </p>
+              </div>
+              <div class="step">
+                <div class="step-number">2</div>
+                <h3>Unzip → Load in Browser → Enable Extension</h3>
+                <p>
+                  Unzip → Chrome → Manage Extension → Enable Developer Mode →
+                  Load Folder → Done
+                </p>
+              </div>
+              <div class="step">
+                <div class="step-number">3</div>
+                <h3>Enjoy Saraansh Learn & Improve Faster</h3>
+                <p>
+                  Use Saraansh for quick summaries, PDF revision, lecture
+                  overviews, and hint-rich LeetCode solving—no more copy-paste.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="step-progress" id="step-progress">
+            <div class="step-dot active" data-index="0"></div>
+            <div class="step-dot" data-index="1"></div>
+            <div class="step-dot" data-index="2"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta" id="cta">
+        <div class="container">
+          <div class="cta-content">
+            <h2>Save Time. Learn Smarter. Code Better.</h2>
+            <p>
+              Join thousands of students and developers who are already using
+              Saraansh to enhance their learning and coding experience.
+            </p>
+            <div class="cta-buttons">
+              <a href="src/onBoard.html" class="btn btn-primary"
+                ><i class="fas fa-rocket"></i> Get Started Free</a
+              >
+              <!-- <a href="#" class="btn btn-secondary"
+                ><i class="fas fa-user"></i> Sign In</a
+              > -->
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-about">
+            <!-- <a href="#" class="logo">
+              <svg
+                class="logo-svg"
+                viewBox="0 0 100 100"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill="url(#logoGradient)"
+                  d="M50,0C22.4,0,0,22.4,0,50s22.4,50,50,50s50-22.4,50-50S77.6,0,50,0z M71.3,71.5c-2.3,1.4-5.2,2.1-8.5,2.1 c-5.4,0-9.6-1.8-12.7-5.3c-3.1-3.5-4.6-8.5-4.6-14.8V26.3h10.9v26.5c0,4.2,0.9,7.2,2.8,9.1c1.9,1.9,4.6,2.8,8.2,2.8 c2.2,0,4-0.4,5.4-1.1L71.3,71.5z"
+                />
+              </svg>
+              Saraansh
+            </a> -->
+            <p>
+              Chrome extension that helps you learn faster and code smarter with
+              YouTube video summaries and LeetCode assistance.
+            </p>
+            <div class="social-links">
+              <a href="#" aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" aria-label="LinkedIn"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+              <a href="#" aria-label="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Saraansh. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <a href="#" class="back-to-top" id="back-to-top" aria-label="Back to top"
+      ><i class="fas fa-arrow-up"></i
+    ></a>
+    <script type="module" src="src/main.js"></script>
+    <script type="module" src="src/scrollAnimation.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const stepsTrack = document.getElementById("steps-track");
+        if (!stepsTrack) {
+          // Don't run the script if the section isn't on this page
+          return;
+        }
+
+        const steps = document.querySelectorAll(".step");
+        const stepDots = document.querySelectorAll(".step-dot");
+        const scrollIndicator = document.getElementById("scroll-indicator");
+        const prevBtn = document.querySelector(".step-nav.prev");
+        const nextBtn = document.querySelector(".step-nav.next");
+        const howItWorksSection = document.getElementById("how-it-works");
+
+        if (
+          !howItWorksSection ||
+          steps.length === 0 ||
+          stepDots.length === 0 ||
+          !prevBtn ||
+          !nextBtn
+        ) {
+          console.error(
+            "One or more elements for the 'how-it-works' section are missing."
+          );
+          return;
+        }
+
+        let currentStep = 0;
+        let isScrolling = false;
+        let hasInteracted = false;
+        let gap = 64; // 4rem
+
+        function centerStep(index) {
+          currentStep = index;
+
+          if (window.innerWidth <= 576) {
+            gap = 16; // 1rem
+          } else {
+            gap = 64; // 4rem
+          }
+
+          const containerWidth =
+            document.querySelector(".steps-container").offsetWidth;
+          const stepWidth = steps[0].offsetWidth;
+          const centerPosition =
+            containerWidth / 2 - stepWidth / 2 - index * (stepWidth + gap);
+
+          stepsTrack.style.transform = `translateX(${centerPosition}px)`;
+
+          steps.forEach((step, i) => {
+            step.classList.toggle("active", i === index);
+          });
+
+          stepDots.forEach((dot, i) => {
+            dot.classList.toggle("active", i === index);
+          });
+
+          if (scrollIndicator) {
+            // Check if scroll indicator exists (you commented it out)
+            scrollIndicator.classList.toggle(
+              "hidden",
+              currentStep === steps.length - 1 || hasInteracted
+            );
+          }
+        }
+
+        centerStep(0);
+
+        function handleInteraction() {
+          if (!hasInteracted && scrollIndicator) {
+            hasInteracted = true;
+            scrollIndicator.classList.add("hidden");
+          }
+        }
+
+        function handleVerticalScroll(e) {
+          const rect = howItWorksSection.getBoundingClientRect();
+
+          if (rect.top > 1 || rect.bottom < window.innerHeight - 1) {
+            return;
+          }
+
+          const delta = Math.sign(e.deltaY);
+
+          if (delta > 0 && currentStep === steps.length - 1) {
+            if (!isScrolling) {
+              return;
+            }
+          }
+
+          if (delta < 0 && currentStep === 0) {
+            if (!isScrolling) {
+              return;
+            }
+          }
+
+          e.preventDefault();
+
+          if (isScrolling) return;
+
+          let newStep = currentStep;
+          if (delta > 0 && currentStep < steps.length - 1) {
+            newStep++;
+          } else if (delta < 0 && currentStep > 0) {
+            newStep--;
+          } else {
+            return;
+          }
+
+          handleInteraction();
+          isScrolling = true;
+          centerStep(newStep);
+
+          setTimeout(() => {
+            isScrolling = false;
+          }, 800); // Cooldown
+        }
+
+        window.addEventListener("wheel", handleVerticalScroll, {
+          passive: false,
+        });
+
+        let touchStartY = 0;
+
+        howItWorksSection.addEventListener(
+          "touchstart",
+          (e) => {
+            touchStartY = e.touches[0].clientY;
+          },
+          { passive: true }
+        );
+
+        howItWorksSection.addEventListener(
+          "touchmove",
+          (e) => {
+            const rect = howItWorksSection.getBoundingClientRect();
+
+            if (rect.top > 1 || rect.bottom < window.innerHeight - 1) {
+              return;
+            }
+
+            if (isScrolling) return;
+
+            const touchY = e.touches[0].clientY;
+            const deltaY = touchStartY - touchY;
+
+            if (Math.abs(deltaY) > 30) {
+              if (deltaY > 0 && currentStep === steps.length - 1) {
+                return;
+              }
+              if (deltaY < 0 && currentStep === 0) {
+                return;
+              }
+
+              handleInteraction();
+
+              let newStep = currentStep;
+              if (deltaY > 0) {
+                newStep++;
+              } else {
+                newStep--;
+              }
+
+              e.preventDefault();
+              isScrolling = true;
+              centerStep(newStep);
+              touchStartY = touchY;
+
+              setTimeout(() => {
+                isScrolling = false;
+              }, 800);
+            }
+          },
+          { passive: false }
+        );
+
+        document.addEventListener("keydown", (e) => {
+          const rect = howItWorksSection.getBoundingClientRect();
+          if (rect.top > 1 || rect.bottom < window.innerHeight - 1) {
+            return;
+          }
+
+          if (isScrolling) return;
+
+          if (e.key === "ArrowDown" && currentStep === steps.length - 1) {
+            return;
+          }
+          if (e.key === "ArrowUp" && currentStep === 0) {
+            return;
+          }
+
+          let newStep = currentStep;
+          if (e.key === "ArrowDown" && currentStep < steps.length - 1) {
+            newStep++;
+          } else if (e.key === "ArrowUp" && currentStep > 0) {
+            newStep--;
+          } else {
+            return;
+          }
+
+          e.preventDefault();
+          handleInteraction();
+          isScrolling = true;
+          centerStep(newStep);
+
+          setTimeout(() => {
+            isScrolling = false;
+          }, 800);
+        });
+
+        prevBtn.addEventListener("click", () => {
+          if (currentStep > 0) {
+            handleInteraction();
+            centerStep(currentStep - 1);
+          }
+        });
+
+        nextBtn.addEventListener("click", () => {
+          if (currentStep < steps.length - 1) {
+            handleInteraction();
+            centerStep(currentStep + 1);
+          }
+        });
+
+        stepDots.forEach((dot) => {
+          dot.addEventListener("click", () => {
+            const index = parseInt(dot.getAttribute("data-index"));
+            handleInteraction();
+            centerStep(index);
+          });
+        });
+
+        window.addEventListener("resize", () => {
+          centerStep(currentStep);
+        });
+      });
+    </script>
+  </body>
+</html>

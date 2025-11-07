@@ -1,0 +1,173 @@
+/* 
+ .logo-container {
+  position: relative;
+  width: min(60px, 10vh, 50%);
+  height: min(60px, 10vh, 50%);
+  max-width: 100%;
+  max-height: 100%;
+  margin: 5px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}  */
+
+.logo-container {
+  width: 80px;
+  height: 80px;
+  /* min-width: 10vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:0%;
+}
+.saaransh-logo {
+  --max: 4rem;
+  --min: 2rem;
+  --h: 260;
+  --s: 97%;
+  --p1: #ffd6ff;
+  --p2: #c8b6ff;
+  --p3: #b28dff;
+  --p4: #7c4dff;
+  --p5: #5b2cff;
+  --font-devanagari: "Poppins", sans-serif;
+
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: clamp(var(--min), 100%, var(--max));
+  max-height: clamp(var(--min), 80%, var(--max));
+  aspect-ratio: 1;
+  margin: 0 auto;
+  border-radius: 50%;
+  filter: drop-shadow(0 6px 16px rgba(124, 77, 255, 0.35));
+  transition: filter 0.35s ease, transform 0.35s ease;
+  will-change: transform, filter;
+  animation: bob 6.5s ease-in-out infinite;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.saaransh-logo:hover,
+.saaransh-logo:focus-visible {
+  filter: drop-shadow(0 12px 38px rgba(124, 77, 255, 0.55));
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.logo-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.disc > circle:first-child {
+  fill: url(#bgGlow);
+}
+
+.revolve .ring {
+  opacity: 0.85;
+  transform-origin: 50px 50px;
+  animation: spin 8s linear infinite;
+  filter: url(#glowFilter);
+}
+
+.orbit-track {
+  transform-origin: 50px 50px;
+  opacity: 0.9;
+}
+
+.orbit--a {
+  animation: spin 9s linear infinite;
+}
+.orbit--b {
+  animation: spin 14s linear infinite reverse;
+}
+.orbit--c {
+  animation: spin 20s linear infinite;
+}
+
+.dot {
+  fill: #ffd6ff;
+  filter: drop-shadow(0 0 4px rgba(200, 182, 255, 0.8));
+}
+
+.sparkles {
+  color: #c8b6ff;
+}
+
+.sp {
+  opacity: 0.9;
+  transform-origin: center;
+  animation: breathe 2.6s ease-in-out infinite;
+}
+
+/* .sp--1 { animation-delay: .1s; transform: scale(0.6) rotate(15deg); color: #ffd6ff; }
+        .sp--2 { animation-delay: .5s; transform: scale(10) rotate(-10deg); color: #b28dff; }
+        .sp--3 { animation-delay: .9s; transform: scale(0.7) rotate(8deg); color: #c8b6ff; } */
+
+.glyph text {
+  letter-spacing: 0.01ch;
+  text-shadow: 0 0 10px rgba(200, 182, 255, 0.2),
+    0 0 24px rgba(124, 77, 255, 0.18);
+}
+
+/* Animations */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  45% {
+    transform: translateY(-2.5%);
+  }
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    opacity: 0.75;
+    transform: scale(0.86) rotate(var(--rot, 0deg));
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) rotate(var(--rot, 0deg));
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .saaransh-logo {
+    animation: none;
+  }
+  .revolve .ring,
+  .orbit--a,
+  .orbit--b,
+  .orbit--c,
+  .sp {
+    animation: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-container {
+    width: min(60px, 10vh, 40%);
+  height: min(60px, 10vh, 40%);
+  }
+}
