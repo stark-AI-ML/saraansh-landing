@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --accent: rgba(138, 43, 226, 0.5);
   --accent-solid: #8a2be2;
   --gradient: linear-gradient(135deg, #8a2be2, #5b2cff);
@@ -11,7 +11,24 @@
   --text-light: #f5f5f7;
   --text-gray: #666;
   --section-padding: clamp(5rem, 10vw, 10rem) 0;
+} */
+
+:root {
+  --accent: rgba(138, 43, 226, 0.5);
+  --accent-solid: #8a2be2;
+  --gradient: linear-gradient(135deg, #8a2be2, #5b2cff);
+  --gradient-reverse: linear-gradient(135deg, #5b2cff, #8a2be2);
+  --dark-bg: #11071f;
+  --light-bg: #11071f;
+  --shadow: 0 10px 30px rgba(138, 43, 226, 0.4);
+  --shadow-light: 0 5px 20px rgba(138, 43, 226, 0.2);
+  --text-dark: #1a1a1a;
+  --text-light: #f5f5f7;
+  --text-gray: #666;
+  --section-padding: clamp(5rem, 10vw, 10rem) 0;
+  --navBar-color : #11071f; 
 }
+
 
 * {
   margin: 0;
@@ -144,7 +161,8 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.8);
+  /* background-color: rgba(255, 255, 255, 0.8); */
+  background-color: var(--navBar-color);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   z-index: 1000;

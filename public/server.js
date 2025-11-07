@@ -38,7 +38,7 @@
 //       }
 //     }
 
-//     // Handle GET /user-data
+//     
 //     else if (parsedUrl.pathname === "/user-data" && method === "GET") {
 //       try {
 //         const authHeader = req.headers["authorization"] || "";
