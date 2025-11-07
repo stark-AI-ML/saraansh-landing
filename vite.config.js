@@ -7,7 +7,6 @@ export default defineConfig({
     open: true
   },
   css: {
-    // This ensures CSS opacity and transitions work correctly
     devSourcemap: true
   }
 })
