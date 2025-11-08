@@ -33,6 +33,7 @@ export class AuthHandler {
     this.app = initializeApp(firebaseConfig);
     this.auth = getAuth(this.app);
     this.provider = new GoogleAuthProvider();
+    this.currentUser = null; 
   }
 
   async GetAuth() {
@@ -50,6 +51,10 @@ export class AuthHandler {
       console.error("Error during redirect sign-in:", error);
       return null;
     }
+  }
+   isSignedIn() {
+    
+    return !!this.currentUser;
   }
 
   async signInWithGoogle() {
@@ -74,7 +79,11 @@ export class AuthHandler {
     }
   }
 
-  onAuthChange(callback) {
-    onAuthStateChanged(this.auth,callback );
+    onAuthChange(callback) {
+    onAuthStateChanged(this.auth, (user) => {
+      this.currentUser = user;
+      callback(user); // this will fire once Firebase finishes restoring
+    });
   }
+
 }

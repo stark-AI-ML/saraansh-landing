@@ -1,9 +1,34 @@
-// import { AuthHandler } from "./firebaseLogin"; 
+import { AuthHandler } from "./firebaseLogin"; 
 
 
 document.addEventListener("DOMContentLoaded", function () {
 
-// firebase Login
+
+
+
+
+
+
+  //firebaseLogin
+
+    const authHandler = new AuthHandler(); 
+
+  authHandler.onAuthChange((user) => {
+    console.log("Auth state restored:", user?.displayName || "No user");
+
+    document.querySelectorAll(".getStartedBtn").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        if (authHandler.isSignedIn()) {
+          window.location.href = "../public/downloadZip.html";
+        } else {
+          e.preventDefault();
+          window.location.href = "../public/onBoard.html";
+        }
+      });
+    });
+  });
+
+
   // Initialize GSAP plugins
   if (typeof gsap !== "undefined") {
     if (typeof ScrollTrigger !== "undefined")
@@ -498,7 +523,6 @@ document.addEventListener("DOMContentLoaded", function () {
       duration: 0.8,
       ease: "power2.out",
     });
-
     // Refresh ScrollTrigger if it exists
     if (typeof ScrollTrigger !== "undefined") {
       ScrollTrigger.refresh();
@@ -506,4 +530,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
     console.log("Saraansh animations loaded successfully!");
   }
-});
+
+})
