@@ -6,7 +6,8 @@ import { initializeApp } from "firebase/app";
 import {
   getAuth,
   GoogleAuthProvider,
-  signInWithRedirect,
+  // signInWithRedirect,
+  signInWithPopup,
   getRedirectResult,
   signOut,
   onAuthStateChanged,
@@ -34,30 +35,31 @@ export class AuthHandler {
     this.provider = new GoogleAuthProvider();
   }
 
- 
-
   async GetAuth() {
-    getRedirectResult(this.auth)
-      .then((result) => {
-        if (result && result.user) {
-          const user = result.user;
-          console.log("User signed in:", user);
-          return result; 
-        }
-      })
-      .catch((error) => {
-        console.error("Error during redirect sign-in:", error);
-      });
+    try {
+      const result = await getRedirectResult(this.auth);
+      console.log(result);
+      if (result && result.user) {
+        const user = result.user;
+        console.log("User signed in:", user);
+        return result;
+      } else {
+        return null;
+      }
+    } catch (error) {
+      console.error("Error during redirect sign-in:", error);
+      return null;
+    }
   }
 
   async signInWithGoogle() {
     try {
-      // console.log(this.firebaseData);
-      await signInWithRedirect(this.auth, this.provider);
-
+      const result = await signInWithPopup(this.auth, this.provider);
+      const user = result.user;
       console.log("Signed in as:", user.displayName);
     } catch (error) {
       console.error("Google Sign-In Error:", error.message);
+
       throw error;
     }
   }
@@ -73,6 +75,6 @@ export class AuthHandler {
   }
 
   onAuthChange(callback) {
-    onAuthStateChanged(this.auth, callback);
+    onAuthStateChanged(this.auth,callback );
   }
 }
