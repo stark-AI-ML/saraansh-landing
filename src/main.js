@@ -4,7 +4,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
 // firebase Login
-  
   // Initialize GSAP plugins
   if (typeof gsap !== "undefined") {
     if (typeof ScrollTrigger !== "undefined")
@@ -151,7 +150,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (videoThumbnail && iframeContainer) {
     videoThumbnail.addEventListener("click", function () {
       // const videoId = "W54Y0cn78NY";
-      const videoId = "JiWv2BcrY5E"
+      const videoId = "f413WmN7Yf4"; 
       // Create iframe element safely
       const iframe = document.createElement("iframe");
       iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
@@ -402,6 +401,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // }
 
       // Demo video parallax effect
+    
       const demoVideo = document.querySelector(".demo-video-wrapper");
       if (demoVideo) {
         gsap.to(demoVideo, {

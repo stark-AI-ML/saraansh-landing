@@ -21,7 +21,7 @@ function triggerDownload() {
 
   link.href = "../public/assets/dist.zip";
 
-  link.download = "dist.zip";
+  link.download = "saraansh.zip";
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);

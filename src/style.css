@@ -590,23 +590,26 @@ nav ul li a:hover::after {
 .demo-container {
   display: flex;
   align-items: center;
-  gap: 4rem;
-  margin-top: 2rem;
+  justify-content: center;
+  margin-top: 1rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .demo-video-wrapper {
-  flex: 1;
+  margin-top: 0.5rem;
+  width: 100%;
+  max-width: 750px;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: var(--shadow);
-  transform: perspective(1500px) rotateY(-5deg) rotateX(5deg) scale(0.95);
-  transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-  will-change: transform;
+  transition: transform 0.3s ease;
   position: relative;
 }
 
 .demo-video-wrapper:hover {
-  transform: perspective(1500px) rotateY(0) rotateX(0) scale(1);
+  transform: translateY(-10px);
 }
 
 .demo-video-thumbnail {
@@ -623,7 +626,7 @@ nav ul li a:hover::after {
 
 .play-button {
   position: absolute;
-  top: 50%;
+  top: 49%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
   width: 80px;
@@ -638,7 +641,7 @@ nav ul li a:hover::after {
 }
 
 .play-button::before {
-  content: "\f04b"; /* FontAwesome play icon */
+  content: "\f04b";
   font-family: "Font Awesome 6 Free";
   font-weight: 900;
   color: white;
