@@ -311,7 +311,7 @@ nav ul li a:hover::after {
   display: block;
   width: 25px;
   height: 3px;
-  background-color: var(--text-dark);
+  background-color: var(--light-bg);
   margin: 5px auto;
   border-radius: 3px;
   transition: all 0.3s ease-in-out;

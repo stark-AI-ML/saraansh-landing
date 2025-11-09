@@ -358,27 +358,6 @@
         }
       });
     </script>
-    <!-- <script type="module">
-      import { AuthHandler } from "/src/firebaseLogin.js";
-
-      async function signInGoogle() {
-        console.log("SignIn Working");
-        const auth = new AuthHandler();
-        await auth.signInWithGoogle();
-        return "signed IN";
-      }
-
-      document.addEventListener("DOMContentLoaded", async () => {
-        console.log("document loaded");
-
-        const signIn = document.getElementById("SignINWithGoogle");
-        signIn.addEventListener("click", async () => {
-          await signInGoogle();
-          console.log("after logged IN"); 
-          window.location.href = "/downloadZip";
-        });
-      });
-    </script> -->
     <script type="module" src="/src/onBoard.js"></script>
   </body>
 </html>
