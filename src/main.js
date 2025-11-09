@@ -8,14 +8,14 @@ document.addEventListener("DOMContentLoaded", function () {
   authHandler.onAuthChange((user) => {
     console.log("Auth state restored:", user?.displayName || "No user");
 
-    
+
     document.querySelectorAll(".getStartedBtn").forEach((btn) => {
       btn.addEventListener("click", (e) => {
         if (authHandler.isSignedIn()) {
           window.location.href = "./downloadZip.html";
         } else {
           e.preventDefault();
-          window.location.href = "../onboard.html";
+          window.location.href = "./onboard.html";
         }
       });
     });
