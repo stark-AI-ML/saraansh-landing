@@ -5,10 +5,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
-
-
-
   //firebaseLogin
 
     const authHandler = new AuthHandler(); 
@@ -22,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
           window.location.href = "../public/downloadZip.html";
         } else {
           e.preventDefault();
-          window.location.href = "/onBoard.html";
+          window.location.href = "../onboard.html";
         }
       });
     });
