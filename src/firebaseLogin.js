@@ -1,13 +1,15 @@
 import { initializeApp } from "firebase/app";
 
+
+
 // import { config } from "dotenv";
 // config();
 // import { configDotenv } from "dotenv";
 import {
   getAuth,
   GoogleAuthProvider,
-  // signInWithRedirect,
-  signInWithPopup,
+  signInWithRedirect,
+  // signInWithPopup,
   getRedirectResult,
   signOut,
   onAuthStateChanged,
@@ -59,8 +61,7 @@ export class AuthHandler {
 
   async signInWithGoogle() {
     try {
-      console.log("inside the SignIN firebaseLogin.js"); 
-      const result = await signInWithPopup(this.auth, this.provider);
+      const result = await signInWithRedirect(this.auth, this.provider);
       const user = result.user;
       console.log("Signed in as:", user.displayName);
     } catch (error) {
