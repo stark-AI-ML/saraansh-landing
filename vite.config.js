@@ -12,8 +12,15 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: './index.html'
+        main: './index.html',
+        onboard: './onboard.html'
       }
-    }
+    },
+    outDir: 'dist',
+    assetsDir: 'assets',
+    sourcemap: true
+  },
+  optimizeDeps: {
+    include: ['firebase/app', 'firebase/auth']
   }
 })
