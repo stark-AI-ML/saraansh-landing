@@ -34,6 +34,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       await signInGoogle();
       
       window.location.href ="downloadZip.html"; 
-    });
+    }); 
   }
 });
