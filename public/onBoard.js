@@ -1,4 +1,4 @@
-import { AuthHandler } from "../src/firebaseLogin";
+import { AuthHandler } from "./firebaseLogin";
 
 async function signInGoogle() {
   console.log("SignIn Working");
@@ -8,12 +8,12 @@ async function signInGoogle() {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-  
+
   console.log("document loaded");
 
   const signIn = document.getElementById("SignINWithGoogle");
   signIn.addEventListener("click", async () => {
     await signInGoogle();
-    window.location.href = "downloadZip.html";
+    window.location.href = "./downloadZip.html";
   });
 });

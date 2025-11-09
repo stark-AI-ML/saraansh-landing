@@ -1,4 +1,4 @@
-import  {AuthHandler}  from "./firebaseLogin"; 
+import  {AuthHandler}  from "../firebaseLogin"; 
 
 
 document.addEventListener("DOMContentLoaded", function () {
