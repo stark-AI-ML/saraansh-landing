@@ -1,4 +1,4 @@
-import { AuthHandler } from "./firebaseLogin"; 
+import { AuthHandler } from "./firebaseLogin"
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
           window.location.href = "../public/downloadZip.html";
         } else {
           e.preventDefault();
-          window.location.href = "../public/onBoard.html";
+          window.location.href = "/onBoard.html";
         }
       });
     });
