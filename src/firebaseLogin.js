@@ -59,6 +59,7 @@ export class AuthHandler {
 
   async signInWithGoogle() {
     try {
+      console.log("inside the SignIN firebaseLogin.js"); 
       const result = await signInWithPopup(this.auth, this.provider);
       const user = result.user;
       console.log("Signed in as:", user.displayName);
