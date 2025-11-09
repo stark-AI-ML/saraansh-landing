@@ -1,343 +1,383 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome to Saraansh - Onboarding</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/saraanshLogo.css">
-    <link rel="stylesheet" href="styles/onboard.css">
-    
-
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/saraanshLogo.css" />
+    <link rel="stylesheet" href="styles/onboard.css" />
+  </head>
+  <body>
     <div class="onboarding-wrapper">
-<div class="logo-containerMain">
-            <div class="saaransh-logo" role="img" aria-label="Saaransh logo">
-              <svg
-                class="logo-svg"
-                viewBox="0 0 100 100"
-                focusable="false"
-                aria-hidden="true"
+      <div class="logo-containerMain">
+        <div class="saaransh-logo" role="img" aria-label="Saaransh logo">
+          <svg
+            class="logo-svg"
+            viewBox="0 0 100 100"
+            focusable="false"
+            aria-hidden="true"
+          >
+            <defs>
+              <!-- Dark color palette with glowing effects -->
+              <radialGradient id="bgGlow" cx="50%" cy="50%" r="70%">
+                <stop offset="0%" stop-color="#5b2cff" stop-opacity="0.5" />
+                <stop offset="55%" stop-color="#302b63" stop-opacity="0.3" />
+                <stop offset="100%" stop-color="#0f0c29" stop-opacity="0.8" />
+              </radialGradient>
+
+              <linearGradient id="glyphGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#ffd6ff" />
+                <stop offset="100%" stop-color="#c8b6ff" />
+              </linearGradient>
+
+              <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#c8b6ff" />
+                <stop offset="60%" stop-color="#7c4dff" />
+                <stop offset="100%" stop-color="#5b2cff" />
+              </linearGradient>
+
+              <!-- Glow filter for revolving ring -->
+              <filter
+                id="glowFilter"
+                x="-50%"
+                y="-50%"
+                width="200%"
+                height="200%"
               >
-                <defs>
-                  <!-- Dark color palette with glowing effects -->
-                  <radialGradient id="bgGlow" cx="50%" cy="50%" r="70%">
-                    <stop offset="0%" stop-color="#5b2cff" stop-opacity="0.5" />
-                    <stop
-                      offset="55%"
-                      stop-color="#302b63"
-                      stop-opacity="0.3"
-                    />
-                    <stop
-                      offset="100%"
-                      stop-color="#0f0c29"
-                      stop-opacity="0.8"
-                    />
-                  </radialGradient>
+                <feGaussianBlur
+                  in="SourceGraphic"
+                  stdDeviation="2.5"
+                  result="blur"
+                />
+                <feColorMatrix
+                  in="blur"
+                  mode="matrix"
+                  values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 15 -5"
+                  result="glow"
+                />
+                <feBlend in="SourceGraphic" in2="glow" mode="screen" />
+              </filter>
+            </defs>
 
-                  <linearGradient id="glyphGrad" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0%" stop-color="#ffd6ff" />
-                    <stop offset="100%" stop-color="#c8b6ff" />
-                  </linearGradient>
+            <!-- Background circle with dark gradient -->
+            <g class="disc">
+              <circle cx="50" cy="50" r="46" fill="url(#bgGlow)" />
+              <circle cx="50" cy="50" r="45" fill="rgba(15, 12, 41, 0.8)" />
+            </g>
 
-                  <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0%" stop-color="#c8b6ff" />
-                    <stop offset="60%" stop-color="#7c4dff" />
-                    <stop offset="100%" stop-color="#5b2cff" />
-                  </linearGradient>
+            <!-- Revolving ring with glow effect -->
+            <g class="revolve">
+              <circle
+                class="ring"
+                cx="50"
+                cy="50"
+                r="39"
+                fill="none"
+                stroke="url(#ringGrad)"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-dasharray="52 290"
+              />
+            </g>
+            <!-- Orbiting dots -->
+            <g class="orbit">
+              <g class="orbit-track orbit--a">
+                <circle cx="50" cy="5" r="30" fill="none" />
+                <circle class="dot" r="0.3" transform="translate(70 14)" />
+              </g>
 
-                  <!-- Glow filter for revolving ring -->
-                  <filter
-                    id="glowFilter"
-                    x="-50%"
-                    y="-50%"
-                    width="200%"
-                    height="200%"
-                  >
-                    <feGaussianBlur
-                      in="SourceGraphic"
-                      stdDeviation="2.5"
-                      result="blur"
-                    />
-                    <feColorMatrix
-                      in="blur"
-                      mode="matrix"
-                      values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 15 -5"
-                      result="glow"
-                    />
-                    <feBlend in="SourceGraphic" in2="glow" mode="screen" />
-                  </filter>
-                </defs>
+              <g class="orbit-track orbit--a">
+                <circle cx="50" cy="50" r="30" fill="none" />
+                <circle class="dot" r="0.5" transform="translate(80 40)" />
+              </g>
 
-                <!-- Background circle with dark gradient -->
-                <g class="disc">
-                  <circle cx="50" cy="50" r="46" fill="url(#bgGlow)" />
-                  <circle cx="50" cy="50" r="45" fill="rgba(15, 12, 41, 0.8)" />
-                </g>
+              <g class="orbit-track orbit--a">
+                <circle cx="50" cy="50" r="30" fill="none" />
+                <circle class="dot" r="0.8" transform="translate(40 30)" />
+              </g>
 
-                <!-- Revolving ring with glow effect -->
-                <g class="revolve">
-                  <circle
-                    class="ring"
-                    cx="50"
-                    cy="50"
-                    r="39"
-                    fill="none"
-                    stroke="url(#ringGrad)"
-                    stroke-width="3"
-                    stroke-linecap="round"
-                    stroke-dasharray="52 290"
-                  />
-                </g>
-                <!-- Orbiting dots -->
-                <g class="orbit">
-                  <g class="orbit-track orbit--a">
-                    <circle cx="50" cy="5" r="30" fill="none" />
-                    <circle class="dot" r="0.3" transform="translate(70 14)" />
-                  </g>
+              <g class="orbit-track orbit--b">
+                <circle cx="50" cy="50" r="23" fill="none" />
+                <circle class="dot" r="1.5" transform="translate(73 50)" />
+              </g>
+              <g class="orbit-track orbit--c">
+                <circle cx="50" cy="50" r="36" fill="none" />
+                <circle class="dot" r="1.6" transform="translate(50 14)" />
+              </g>
+            </g>
+            <!-- Hindi glyph -->
+            <g class="glyph">
+              <text
+                x="50"
+                y="61"
+                text-anchor="middle"
+                dominant-baseline="middle"
+                font-size="56"
+                font-weight="700"
+                fill="url(#glyphGrad)"
+                stroke="rgba(124,77,255,0.35)"
+                stroke-width="0.5"
+                style="
+                  paint-order: stroke fill;
+                  font-family: var(--font-devanagari);
+                "
+              >
+                श
+              </text>
+            </g>
+          </svg>
+        </div>
+      </div>
 
-                  <g class="orbit-track orbit--a">
-                    <circle cx="50" cy="50" r="30" fill="none" />
-                    <circle class="dot" r="0.5" transform="translate(80 40)" />
-                  </g>
+      <div class="progress-container">
+        <div class="progress-bar">
+          <div class="progress" id="progress"></div>
+        </div>
+        <div class="step-indicators">
+          <div class="step-indicator active">1</div>
+          <div class="step-indicator">2</div>
+          <div class="step-indicator">3</div>
+        </div>
+      </div>
 
-                  <g class="orbit-track orbit--a">
-                    <circle cx="50" cy="50" r="30" fill="none" />
-                    <circle class="dot" r="0.8" transform="translate(40 30)" />
-                  </g>
-
-                  <g class="orbit-track orbit--b">
-                    <circle cx="50" cy="50" r="23" fill="none" />
-                    <circle class="dot" r="1.5" transform="translate(73 50)" />
-                  </g>
-                  <g class="orbit-track orbit--c">
-                    <circle cx="50" cy="50" r="36" fill="none" />
-                    <circle class="dot" r="1.6" transform="translate(50 14)" />
-                  </g>
-                </g>
-                <!-- Hindi glyph -->
-                <g class="glyph">
-                  <text
-                    x="50"
-                    y="61"
-                    text-anchor="middle"
-                    dominant-baseline="middle"
-                    font-size="56"
-                    font-weight="700"
-                    fill="url(#glyphGrad)"
-                    stroke="rgba(124,77,255,0.35)"
-                    stroke-width="0.5"
-                    style="
-                      paint-order: stroke fill;
-                      font-family: var(--font-devanagari);
-                    "
-                  >
-                    श
-                  </text>
-                </g>
-              </svg>
+      <div class="form-container">
+        <!-- Step 1 -->
+        <div class="form-step active" id="step-1">
+          <h2>Are you a student or a professional?</h2>
+          <div class="options-grid">
+            <div class="option-card" data-value="student">
+              <i class="fas fa-user-graduate"></i>
+              Student
+            </div>
+            <div class="option-card" data-value="professional">
+              <i class="fas fa-briefcase"></i>
+              Professional
             </div>
           </div>
-          
-        
-        <div class="progress-container">
-            <div class="progress-bar">
-                <div class="progress" id="progress"></div>
-            </div>
-            <div class="step-indicators">
-                <div class="step-indicator active">1</div>
-                <div class="step-indicator">2</div>
-                <div class="step-indicator">3</div>
-            </div>
+          <div class="nav-buttons">
+            <button class="btn-nav btn-prev" disabled>Previous</button>
+            <button class="btn-nav btn-next">Next</button>
+          </div>
         </div>
-        
-        <div class="form-container">
-            <!-- Step 1 -->
-            <div class="form-step active" id="step-1">
-                <h2>Are you a student or a professional?</h2>
-                <div class="options-grid">
-                    <div class="option-card" data-value="student">
-                        <i class="fas fa-user-graduate"></i>
-                        Student
-                    </div>
-                    <div class="option-card" data-value="professional">
-                        <i class="fas fa-briefcase"></i>
-                        Professional
-                    </div>
-                </div>
-                <div class="nav-buttons">
-                    <button class="btn-nav btn-prev" disabled>Previous</button>
-                    <button class="btn-nav btn-next">Next</button>
-                </div>
-            </div>
-            
-            <!-- Step 2 -->
-            <div class="form-step" id="step-2">
-                <h2>How did you hear about Saraansh?</h2>
-                <div class="options-grid">
-                    <div class="option-card" data-value="social-media">
-                        <i class="fas fa-hashtag"></i>
-                        Social Media
-                    </div>
-                    <div class="option-card" data-value="friend">
-                        <i class="fas fa-users"></i>
-                        Friend or Colleague
-                    </div>
-                    <div class="option-card" data-value="search">
-                        <i class="fab fa-google"></i>
-                        Search Engine
-                    </div>
-                    <div class="option-card" data-value="other">
-                        <i class="fas fa-ellipsis-h"></i>
-                        Other
-                    </div>
 
-                </div>
-                <div class="nav-buttons">
-                    <button class="btn-nav btn-prev">Previous</button>
-                    <button class="btn-nav btn-next">Next</button>
-                </div>
+        <!-- Step 2 -->
+        <div class="form-step" id="step-2">
+          <h2>How did you hear about Saraansh?</h2>
+          <div class="options-grid">
+            <div class="option-card" data-value="social-media">
+              <i class="fas fa-hashtag"></i>
+              Social Media
             </div>
-            
-            <!-- Step 3 -->
-            <div class="form-step" id="step-3">
-                <h2>You're all set. Let's get started!</h2>
-                <p>Create an account to save your summaries and track your coding progress.</p>
-                <div onclick="()=>{signINGoogle()}" id="SignINWithGoogle" class="btn-google">
-                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                        <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path>
-                        <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path>
-                        <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"></path>
-                        <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path>
-                        <path fill="none" d="M0 0h48v48H0z"></path>
-                    </svg>
-                    Sign in with Google
-                </div>
-                <div class="nav-buttons">
-                    <button class="btn-nav btn-prev">Previous</button>
-                    <button class="btn-nav btn-next" disabled>Next</button>
-                </div>
+            <div class="option-card" data-value="friend">
+              <i class="fas fa-users"></i>
+              Friend or Colleague
             </div>
+            <div class="option-card" data-value="search">
+              <i class="fab fa-google"></i>
+              Search Engine
+            </div>
+            <div class="option-card" data-value="other">
+              <i class="fas fa-ellipsis-h"></i>
+              Other
+            </div>
+          </div>
+          <div class="nav-buttons">
+            <button class="btn-nav btn-prev">Previous</button>
+            <button class="btn-nav btn-next">Next</button>
+          </div>
         </div>
+
+        <!-- Step 3 -->
+        <div class="form-step" id="step-3">
+          <h2>You're all set. Let's get started!</h2>
+          <p>
+            Create an account to save your summaries and track your coding
+            progress.
+          </p>
+          <div
+            onclick="()=>{signINGoogle()}"
+            id="SignINWithGoogle"
+            class="btn-google"
+          >
+            <svg
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 48 48"
+            >
+              <path
+                fill="#EA4335"
+                d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"
+              ></path>
+              <path
+                fill="#4285F4"
+                d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"
+              ></path>
+              <path
+                fill="#FBBC05"
+                d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"
+              ></path>
+              <path
+                fill="#34A853"
+                d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"
+              ></path>
+              <path fill="none" d="M0 0h48v48H0z"></path>
+            </svg>
+            Sign in with Google
+          </div>
+          <div class="nav-buttons">
+            <button class="btn-nav btn-prev">Previous</button>
+            <button class="btn-nav btn-next" disabled>Next</button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
+      document.addEventListener("DOMContentLoaded", () => {
+        const data = { work: "", ads: "" };
 
-             const data = {'work':'', 'ads':''}; 
+        const steps = document.querySelectorAll(".form-step");
+        const stepIndicators = document.querySelectorAll(".step-indicator");
+        const progressBar = document.getElementById("progress");
+        const optionCards = document.querySelectorAll(".option-card");
+        const nextButtons = document.querySelectorAll(".btn-next");
+        const prevButtons = document.querySelectorAll(".btn-prev");
 
-            const steps = document.querySelectorAll('.form-step');
-            const stepIndicators = document.querySelectorAll('.step-indicator');
-            const progressBar = document.getElementById('progress');
-            const optionCards = document.querySelectorAll('.option-card');
-            const nextButtons = document.querySelectorAll('.btn-next');
-            const prevButtons = document.querySelectorAll('.btn-prev');
+        let currentStep = 0;
 
-            let currentStep = 0;
-            
-            // Initialize the first step
+        // Initialize the first step
+        updateStepIndicators();
+        updateProgressBar();
+
+        // Option card selection
+        optionCards.forEach((card) => {
+          card.addEventListener("click", () => {
+            const parentGrid = card.closest(".options-grid");
+            if (parentGrid) {
+              parentGrid
+                .querySelectorAll(".option-card")
+                .forEach((c) => c.classList.remove("active"));
+            }
+
+            card.classList.add("active");
+
+            const value = card.getAttribute("data-value");
+
+            console.log(value);
+
+            if (value === "student" || value === "professional") {
+              data.work = value;
+            } else {
+              data.ads = value;
+            }
+
+            // Auto-advance if this is not the last step
+            if (currentStep < steps.length - 1) {
+              setTimeout(() => {
+                nextStep();
+              }, 500);
+            }
+          });
+        });
+
+        // Next button functionality
+        nextButtons.forEach((button) => {
+          button.addEventListener("click", nextStep);
+        });
+
+        // Previous button functionality
+        prevButtons.forEach((button) => {
+          button.addEventListener("click", prevStep);
+        });
+
+        function nextStep() {
+          if (currentStep < steps.length - 1) {
+            steps[currentStep].classList.remove("active");
+            currentStep++;
+            steps[currentStep].classList.add("active");
             updateStepIndicators();
             updateProgressBar();
+            updateNavButtons();
+          }
+        }
 
-            // Option card selection
-            optionCards.forEach(card => {
-                card.addEventListener('click', () => {
-                    const parentGrid = card.closest('.options-grid');
-                    if (parentGrid) {
-                        parentGrid.querySelectorAll('.option-card').forEach(c => c.classList.remove('active'));    
-                    }
-                    
-                    card.classList.add('active');
+        function prevStep() {
+          if (currentStep > 0) {
+            steps[currentStep].classList.remove("active");
+            currentStep--;
+            steps[currentStep].classList.add("active");
+            updateStepIndicators();
+            updateProgressBar();
+            updateNavButtons();
+          }
+        }
 
-                    const value = card.getAttribute('data-value');
-                    
-                    console.log(value);  
+        function updateStepIndicators() {
+          stepIndicators.forEach((indicator, index) => {
+            if (index <= currentStep) {
+              indicator.classList.add("active");
+            } else {
+              indicator.classList.remove("active");
+            }
+          });
+        }
 
-                    if(value === 'student' || value === 'professional'){
-                      data.work = value; 
-                    }else{
-                      data.ads = value; 
-                    }
-                    
-                    // Auto-advance if this is not the last step
-                    if (currentStep < steps.length - 1) {
-                        setTimeout(() => {
-                            nextStep();
-                        }, 500);
-                    }
-                });
-            });
-            
-            // Next button functionality
-            nextButtons.forEach(button => {
-                button.addEventListener('click', nextStep);
-            });
-            
-            // Previous button functionality
-            prevButtons.forEach(button => {
-                button.addEventListener('click', prevStep);
-            });
-            
-            function nextStep() {
-                if (currentStep < steps.length - 1) {
-                    steps[currentStep].classList.remove('active');
-                    currentStep++;
-                    steps[currentStep].classList.add('active');
-                    updateStepIndicators();
-                    updateProgressBar();
-                    updateNavButtons();
-                }
+        function updateProgressBar() {
+          const progressPercentage = (currentStep / (steps.length - 1)) * 100;
+          progressBar.style.width = `${progressPercentage}%`;
+        }
+
+        function updateNavButtons() {
+          prevButtons.forEach((button) => {
+            if (currentStep === 0) {
+              button.disabled = true;
+            } else {
+              button.disabled = false;
             }
-            
-            function prevStep() {
-                if (currentStep > 0) {
-                    steps[currentStep].classList.remove('active');
-                    currentStep--;
-                    steps[currentStep].classList.add('active');
-                    updateStepIndicators();
-                    updateProgressBar();
-                    updateNavButtons();
-                }
+          });
+
+          nextButtons.forEach((button) => {
+            if (currentStep === steps.length - 1) {
+              button.disabled = true;
+            } else {
+              button.disabled = false;
             }
-            
-            function updateStepIndicators() {
-                stepIndicators.forEach((indicator, index) => {
-                    if (index <= currentStep) {
-                        indicator.classList.add('active');
-                    } else {
-                        indicator.classList.remove('active');
-                    }
-                });
-            }
-            
-            function updateProgressBar() {
-                const progressPercentage = (currentStep / (steps.length - 1)) * 100;
-                progressBar.style.width = `${progressPercentage}%`;
-            }
-            
-            function updateNavButtons() {
-             
-                prevButtons.forEach(button => {
-                    if (currentStep === 0) {
-                        button.disabled = true;
-                    } else {
-                        button.disabled = false;
-                    }
-                });
-                
-                nextButtons.forEach(button => {
-                    if (currentStep === steps.length - 1) {
-                        button.disabled = true;
-                    } else {
-                        button.disabled = false;
-                    }
-                });
-            }
+          });
+        }
+      });
+    </script>
+    <script>
+      import { AuthHandler } from "./firebaseLogin";
+
+      async function signInGoogle() {
+        console.log("SignIn Working");
+        const auth = new AuthHandler();
+        await auth.signInWithGoogle();
+        return "signed IN";
+      }
+
+      document.addEventListener("DOMContentLoaded", async () => {
+        console.log("document loaded");
+
+        const signIn = document.getElementById("SignINWithGoogle");
+        signIn.addEventListener("click", async () => {
+          await signInGoogle();
+          window.location.href = "./downloadZip.html";
         });
+      });
     </script>
     <script type="module" src="./onBoard.js"></script>
-</body>
+  </body>
 </html>
