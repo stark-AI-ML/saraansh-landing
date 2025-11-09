@@ -12,9 +12,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: './index.html',
-        onboard: './onboard.html', 
-        downloadZIP: './downloadZip.html'
+        main: './index.html'
       }
     }
   }
