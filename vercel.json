@@ -6,20 +6,5 @@
     { "source": "/onboard", "destination": "/onboard.html" },
     { "source": "/downloadZip", "destination": "/downloadZip.html" },
     { "source": "/(.*)", "destination": "/index.html" }
-  ],
-  "routes": [
-    { "handle": "filesystem" },
-    { 
-      "src": "/onboard", 
-      "dest": "/onboard.html"
-    },
-    { 
-      "src": "/downloadZip", 
-      "dest": "/downloadZip.html"
-    },
-    { 
-      "src": "/(.*)", 
-      "dest": "/index.html"
-    }
   ]
 }
