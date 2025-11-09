@@ -9,8 +9,8 @@ import {
   getAuth,
   GoogleAuthProvider,
   signInWithRedirect,
-  // signInWithPopup,
-  getRedirectResult,
+  signInWithPopup,
+  // getRedirectResult,
   signOut,
   onAuthStateChanged,
 } from "firebase/auth";
@@ -61,7 +61,7 @@ export class AuthHandler {
 
   async signInWithGoogle() {
     try {
-      const result = await signInWithRedirect(this.auth, this.provider);
+      const result = await signInWithPopup(this.auth, this.provider);
       const user = result.user;
       console.log("Signed in as:", user.displayName);
     } catch (error) {

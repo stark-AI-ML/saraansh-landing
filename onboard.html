@@ -374,6 +374,7 @@
         const signIn = document.getElementById("SignINWithGoogle");
         signIn.addEventListener("click", async () => {
           await signInGoogle();
+          console.log("after logged IN"); 
           window.location.href = "/downloadZip";
         });
       });
