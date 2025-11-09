@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saraansh - Download</title>
+    <link rel="stylesheet" href="saraanshLogo.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/downloadZip.css" />
+    <link rel="stylesheet" href="styles/onboard.css" />
+  </head>
+  <body>
+    <div class="onboarding-wrapper">
+      <div class="logo-containerMain">
+        <div class="saaransh-logo" role="img" aria-label="Saaransh logo">
+          <svg
+            class="logo-svg"
+            viewBox="0 0 100 100"
+            focusable="false"
+            aria-hidden="true"
+          >
+            <defs>
+              <radialGradient id="bgGlow" cx="50%" cy="50%" r="70%">
+                <stop offset="0%" stop-color="#5b2cff" stop-opacity="0.5" />
+                <stop offset="55%" stop-color="#302b63" stop-opacity="0.3" />
+                <stop offset="100%" stop-color="#0f0c29" stop-opacity="0.8" />
+              </radialGradient>
+              <linearGradient id="glyphGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#ffd6ff" />
+                <stop offset="100%" stop-color="#c8b6ff" />
+              </linearGradient>
+              <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#c8b6ff" />
+                <stop offset="60%" stop-color="#7c4dff" />
+                <stop offset="100%" stop-color="#5b2cff" />
+              </linearGradient>
+              <filter
+                id="glowFilter"
+                x="-50%"
+                y="-50%"
+                width="200%"
+                height="200%"
+              >
+                <feGaussianBlur
+                  in="SourceGraphic"
+                  stdDeviation="2.5"
+                  result="blur"
+                />
+                <feColorMatrix
+                  in="blur"
+                  mode="matrix"
+                  values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 15 -5"
+                  result="glow"
+                />
+                <feBlend in="SourceGraphic" in2="glow" mode="screen" />
+              </filter>
+            </defs>
+            <g class="disc">
+              <circle cx="50" cy="50" r="46" fill="url(#bgGlow)" />
+              <circle cx="50" cy="50" r="45" fill="rgba(15, 12, 41, 0.8)" />
+            </g>
+            <g class="revolve">
+              <circle
+                class="ring"
+                cx="50"
+                cy="50"
+                r="39"
+                fill="none"
+                stroke="url(#ringGrad)"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-dasharray="52 290"
+              />
+            </g>
+            <g class="orbit">
+              <g class="orbit-track orbit--a">
+                <circle cx="50" cy="5" r="30" fill="none" />
+                <circle class="dot" r="0.3" transform="translate(70 14)" />
+              </g>
+              <g class="orbit-track orbit--a">
+                <circle cx="50" cy="50" r="30" fill="none" />
+                <circle class="dot" r="0.5" transform="translate(80 40)" />
+              </g>
+              <g class="orbit-track orbit--a">
+                <circle cx="50" cy="50" r="30" fill="none" />
+                <circle class="dot" r="0.8" transform="translate(40 30)" />
+              </g>
+              <g class="orbit-track orbit--b">
+                <circle cx="50" cy="50" r="23" fill="none" />
+                <circle class="dot" r="1.5" transform="translate(73 50)" />
+              </g>
+              <g class="orbit-track orbit--c">
+                <circle cx="50" cy="50" r="36" fill="none" />
+                <circle class="dot" r="1.6" transform="translate(50 14)" />
+              </g>
+            </g>
+            <g class="glyph">
+              <text
+                x="50"
+                y="61"
+                text-anchor="middle"
+                dominant-baseline="middle"
+                font-size="56"
+                font-weight="700"
+                fill="url(#glyphGrad)"
+                stroke="rgba(124,77,255,0.35)"
+                stroke-width="0.5"
+                style="
+                  paint-order: stroke fill;
+                  font-family: var(--font-devanagari);
+                "
+              >
+                श
+              </text>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <div class="form-container">
+        <div class="form-step active" id="download-step">
+          <h2>Your Download is Ready!</h2>
+          <p>
+            Click the button below to download the Saraansh extension as a ZIP
+            file.
+          </p>
+
+          <div class="download-button-container">
+            <span id="downloadZipBtn" class="btn-download" download>
+              <i class="fas fa-download"></i>
+              Download ZIP File
+            </span>
+          </div>
+
+          <p class="small-text">
+            After downloading, unzip the file and "Load unpacked" in Chrome's
+            extension manager.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+
+        function triggerDownload() {
+          const link = document.createElement("a");
+          link.href = "/assets/dist.zip"; 
+          link.download = "saraansh.zip";
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        }
+        console.log("Download page loaded.");
+
+        document
+          .getElementById("downloadZipBtn")
+          .addEventListener("click", () => {
+            triggerDownload(); 
+          });
+      });
+
+    </script>
+  </body>
+</html>

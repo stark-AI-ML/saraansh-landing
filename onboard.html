@@ -359,7 +359,7 @@
       });
     </script>
     <script type="module">
-      import { AuthHandler } from "./firebaseLogin";
+      import { AuthHandler } from "/src/firebaseLogin.js";
 
       async function signInGoogle() {
         console.log("SignIn Working");
@@ -374,10 +374,10 @@
         const signIn = document.getElementById("SignINWithGoogle");
         signIn.addEventListener("click", async () => {
           await signInGoogle();
-          window.location.href = "./downloadZip.html";
+          window.location.href = "/downloadZip";
         });
       });
     </script>
-    <script type="module" src="./onBoard.js"></script>
+    <script type="module" src="/src/onBoard.js"></script>
   </body>
 </html>

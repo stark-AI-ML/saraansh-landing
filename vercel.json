@@ -1,16 +1,28 @@
 {
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite",
   "rewrites": [
     { "source": "/onboard", "destination": "/onboard.html" },
     { "source": "/downloadZip", "destination": "/downloadZip.html" },
-    { "source": "/(.*)", "destination": "/" }
+    { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
     {
       "source": "/assets/(.*)",
       "headers": [
         {
-          "key": "Content-Type",
-          "value": "application/javascript"
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
         }
       ]
     },
@@ -22,6 +34,21 @@
           "value": "application/javascript"
         }
       ]
+    }
+  ],
+  "routes": [
+    { "handle": "filesystem" },
+    { 
+      "src": "/onboard", 
+      "dest": "/onboard.html"
+    },
+    { 
+      "src": "/downloadZip", 
+      "dest": "/downloadZip.html"
+    },
+    { 
+      "src": "/(.*)", 
+      "dest": "/index.html"
     }
   ]
 }

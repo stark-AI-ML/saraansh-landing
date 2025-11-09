@@ -13,13 +13,25 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: './index.html',
+        onboard: './onboard.html',
+        downloadZip: './downloadZip.html'
       }
     },
     outDir: 'dist',
     assetsDir: 'assets',
-    sourcemap: true
+    sourcemap: true,
+    minify: 'esbuild',
+    emptyOutDir: true,
+    modulePreload: {
+      polyfill: true
+    }
   },
   optimizeDeps: {
     include: ['firebase/app', 'firebase/auth']
+  },
+  resolve: {
+    alias: {
+      '@': '/src'
+    }
   }
 })
