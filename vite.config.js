@@ -13,7 +13,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: './index.html',
-        onboard: './onboard.html'
+        onboard: 'public/onboard.html'
       }
     },
     outDir: 'dist',

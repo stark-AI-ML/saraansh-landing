@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
           window.location.href = "../public/downloadZip.html";
         } else {
           e.preventDefault();
-          window.location.href = "../onboard.html";
+          window.location.href = "../public/onboard.html";
         }
       });
     });

@@ -7,18 +7,13 @@ async function signInGoogle() {
   return "signed IN";
 }
 
-
-
 document.addEventListener("DOMContentLoaded", async () => {
+  
   console.log("document loaded");
-  const auth = await GetAuth();
-  if (auth) {
-     window.location.href ="downloadZip.html"; 
-  } else {
-    const signIn = document.getElementById("SignINWithGoogle");
-    signIn.addEventListener("click", async () => {
-      await signInGoogle();
-      window.location.href ="downloadZip.html"; 
-    }); 
-  }
+
+  const signIn = document.getElementById("SignINWithGoogle");
+  signIn.addEventListener("click", async () => {
+    await signInGoogle();
+    window.location.href = "downloadZip.html";
+  });
 });
