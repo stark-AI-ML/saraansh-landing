@@ -1,6 +1,7 @@
 {
   "rewrites": [
     { "source": "/onboard", "destination": "/onboard.html" },
+    { "source": "/downloadZip", "destination": "/downloadZip.html" },
     { "source": "/(.*)", "destination": "/" }
   ],
   "headers": [

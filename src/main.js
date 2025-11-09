@@ -12,10 +12,10 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(".getStartedBtn").forEach((btn) => {
       btn.addEventListener("click", (e) => {
         if (authHandler.isSignedIn()) {
-          window.location.href = "./downloadZip.html";
+          window.location.href = "/downloadZip";
         } else {
           e.preventDefault();
-          window.location.href = "onboard.html";
+          window.location.href = "/onboard";
         }
       });
     });
